@@ -1,8 +1,3 @@
-Logging.debug("Loaded.");
-
-Hooks.on("init", DiscordBot.initialize);
-Hooks.on("ready", DiscordBot.onReady);
-
 class DiscordBot {
     static initialize() {
         Logging.debug("Initializing.");
@@ -50,3 +45,8 @@ class Logging {
         console.error(`[${this.ID}]`, ...args);
     }
 }
+
+Logging.debug("Loaded.");
+
+Hooks.on("init", DiscordBot.initialize);
+Hooks.on("ready", DiscordBot.onReady);

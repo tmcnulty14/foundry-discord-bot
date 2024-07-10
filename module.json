@@ -2,7 +2,7 @@
     "name": "discord-bot",
     "title": "Discord Bot",
     "description": "A module that hosts an extensible Discord bot in your Foundry server.",
-    "version": "0.0.0",
+    "version": "0.0.1",
 
 
     "url": "https://github.com/tmcnulty14/foundry-discord-bot/",

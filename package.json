@@ -1,10 +1,14 @@
 {
   "name": "foundry-discord-bot",
-  "version": "0.0.1",
   "description": "A Foundry VTT module that hosts an extensible Discord bot in your Foundry server.",
-  "main": "scripts/discord-bot.js",
+  "main": "scripts/discord-bot.mjs",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "npm run build:code && npm run build:css",
+    "build:code": "rollup scripts/discord-bot.mjs -f es -o scripts/discord-bot-compiled.mjs -p node-resolve -m --sourcemapFile scripts/discord-bot.mjs",
+    "build:css": "lessc styles/discord-bot.css",
+    "lint": "eslint --ignore-pattern .gitignore ./",
+    "lint:fix": "eslint --ignore-pattern .gitignore --fix ./",
+    "postinstall": "npm run build:css"
   },
   "repository": {
     "type": "git",
@@ -13,10 +17,13 @@
   "author": "tmcnulty14",
   "license": "MIT",
   "dependencies": {
-    "discord.js": "^14.15.3",
-    "dotenv": "^16.4.5"
+    "discord.js": "^14.15.3"
   },
   "devDependencies": {
-    "eslint": "^9.6.0"
+    "@babel/eslint-parser": "^7.24.7",
+    "@foundryvtt/foundryvtt-cli": "github:foundryvtt/foundryvtt-cli",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "less": "^4.2.0",
+    "rollup": "^4.18.1"
   }
 }

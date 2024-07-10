@@ -22,10 +22,7 @@
         }
     ],
     "esmodules": [
-        "scripts/discord-bot.js"
-    ],
-    "scripts": [
-        "scripts/lib/logging.js"
+        "scripts/discord-bot.mjs"
     ],
     "styles": [
         "styles/discord-bot.css"

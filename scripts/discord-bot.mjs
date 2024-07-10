@@ -1,33 +1,36 @@
 // Require the necessary discord.js classes
 const { Client, Events, GatewayIntentBits } = require('discord.js');
 
+import * as log from './lib/logging.mjs';
+
 class DiscordBot {
     static CLIENT = new Client({ intents: [GatewayIntentBits.Guilds] });
 
-    static CLIENT_READY = false
+    static CLIENT_READY = false;
 
     static async initialize() {
-        Logging.debug("Initializing.");
+        log.debug('Initializing.');
 
         this.createSettings();
 
-        if (game.user.role !== 4) { // USER_ROLES.GAMEMASTER = 4
-            Logging.log("Not logged in as GM. Discord bot only runs when logged in as the GM.");
+        // USER_ROLES.GAMEMASTER = 4
+        if (game.user.role !== 4) {
+            log.info('Not logged in as GM. Discord bot only runs when logged in as the GM.');
             return;
         }
 
         const token = game.settings.get('discord-bot', 'discordToken');
         if (!token) {
-            Logging.log('No discord token configured, skipping bot login.');
+            log.info('No discord token configured, skipping bot login.');
             return;
         }
 
         // Login the discord bot client.
         CLIENT.once(Events.ClientReady, readyClient => {
-            Logging.log(`Discord client ready! Logged in as ${readyClient.user.tag}`);
-            CLIENT_READY = true
+            log.info(`Discord client ready! Logged in as ${readyClient.user.tag}`);
+            this.CLIENT_READY = true;
         });
-        CLIENT.login(token);
+        this.CLIENT.login(token);
     }
 
     static createSettings() {
@@ -37,20 +40,19 @@ class DiscordBot {
             scope: 'client',
             config: true,
             type: String,
-            default: "",
+            default: '',
             onChange: value => { },
             requiresReload: true,
-        })
+        });
     }
 
     static async onReady() {
-        Logging.debug("Ready.");
+        log.debug('Ready.');
     }
 }
 
 
+log.debug('Loaded.');
 
-Logging.debug("Loaded.");
-
-Hooks.once("init", DiscordBot.initialize);
-Hooks.once("ready", DiscordBot.onReady);
+Hooks.once('init', DiscordBot.initialize);
+Hooks.once('ready', DiscordBot.onReady);

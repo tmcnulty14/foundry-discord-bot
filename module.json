@@ -37,6 +37,6 @@
 
     "library": true,
     "compatibility": {
-        "verified": "12",
-    },
+        "verified": "12"
+    }
 }

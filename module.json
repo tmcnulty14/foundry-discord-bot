@@ -2,10 +2,10 @@
     "name": "discord-bot",
     "title": "Discord Bot",
     "description": "A module that hosts an extensible Discord bot in your Foundry server.",
-    "version": "0.0.2",
-    "url": "https://github.com/tmcnulty14/foundry-discord-bot/",
-    "manifest": "https://github.com/tmcnulty14/foundry-discord-bot/releases/download/latest/module.json",
-    "download": "https://github.com/tmcnulty14/foundry-discord-bot/releases/download/latest/discord-bot.zip",
+    "version": "#{VERSION}#",
+    "url": "#{URL}#",
+    "manifest": "#{MANIFEST}#",
+    "download": "#{DOWNLOAD}#",
     "authors": [
         {
             "name": "Thomas McNulty",
@@ -21,8 +21,11 @@
             "path": "lang/en.json"
         }
     ],
-    "scripts": [
+    "esmodules": [
         "scripts/discord-bot.js"
+    ],
+    "scripts": [
+        "scripts/lib/logging.js"
     ],
     "styles": [
         "styles/discord-bot.css"

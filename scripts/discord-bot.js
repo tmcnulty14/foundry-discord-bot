@@ -6,7 +6,7 @@ class DiscordBot {
 
     static CLIENT_READY = false
 
-    static initialize() {
+    static async initialize() {
         Logging.debug("Initializing.");
 
         this.createSettings();
@@ -43,44 +43,14 @@ class DiscordBot {
         })
     }
 
-    static onReady() {
+    static async onReady() {
         Logging.debug("Ready.");
     }
 }
 
-class Logging {
-    static ID = 'discord-bot'
 
-    /**
-     * Log helper.
-     **/
-    static log(...args) {
-        console.log(`[${this.ID}]`, ...args);
-    }
-
-    /**
-     * Log helper.
-     **/
-    static debug(...args) {
-        console.debug(`[${this.ID}]`, ...args)
-    }
-
-    /**
-     * Warning log helper.
-     **/
-    static warn(...args) {
-        console.warn(`[${this.ID}]`, ...args);
-    }
-
-    /**
-     * Error log helper.
-     **/
-    static error(...args) {
-        console.error(`[${this.ID}]`, ...args);
-    }
-}
 
 Logging.debug("Loaded.");
 
-Hooks.on("init", DiscordBot.initialize);
-Hooks.on("ready", DiscordBot.onReady);
+Hooks.once("init", DiscordBot.initialize);
+Hooks.once("ready", DiscordBot.onReady);

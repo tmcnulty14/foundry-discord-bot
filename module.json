@@ -2,27 +2,23 @@
     "name": "discord-bot",
     "title": "Discord Bot",
     "description": "A module that hosts an extensible Discord bot in your Foundry server.",
-    "version": "0.0.1",
-
-
+    "version": "0.0.2",
     "url": "https://github.com/tmcnulty14/foundry-discord-bot/",
     "manifest": "https://github.com/tmcnulty14/foundry-discord-bot/releases/download/latest/module.json",
     "download": "https://github.com/tmcnulty14/foundry-discord-bot/releases/download/latest/discord-bot.zip",
     "authors": [
         {
-          "name": "Thomas McNulty",
-          "url": "https://github.com/tmcnulty14",
-          "discord": "aetherfusion",
-          "flags": {}
+            "name": "Thomas McNulty",
+            "url": "https://github.com/tmcnulty14",
+            "discord": "aetherfusion",
+            "flags": {}
         }
     ],
-
-
     "languages": [
         {
-          "lang": "en",
-          "name": "English",
-          "path": "lang/en.json"
+            "lang": "en",
+            "name": "English",
+            "path": "lang/en.json"
         }
     ],
     "scripts": [
@@ -33,8 +29,6 @@
     ],
     "license": "LICENSE",
     "readme": "README.md",
-
-
     "library": true,
     "compatibility": {
         "verified": "12"

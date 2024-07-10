@@ -1,0 +1,22 @@
+{
+  "name": "foundry-discord-bot",
+  "version": "0.0.1",
+  "description": "A Foundry VTT module that hosts an extensible Discord bot in your Foundry server.",
+  "main": "scripts/discord-bot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tmcnulty14/foundry-discord-bot/"
+  },
+  "author": "tmcnulty14",
+  "license": "MIT",
+  "dependencies": {
+    "discord.js": "^14.15.3",
+    "dotenv": "^16.4.5"
+  },
+  "devDependencies": {
+    "eslint": "^9.6.0"
+  }
+}

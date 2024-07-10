@@ -1,11 +1,7 @@
 Logging.debug("Loaded.");
 
-Hooks.on("init", function() {
-    DiscordBot.initialize()
-});
-
-Hooks.on("ready", function() {
-});
+Hooks.on("init", DiscordBot.initialize);
+Hooks.on("ready", DiscordBot.onReady);
 
 class DiscordBot {
     static initialize() {
@@ -30,31 +26,27 @@ class Logging {
      * Log helper.
      **/
     static log(...args) {  
-        console.log(this.ID, '|', ...args);
+        console.log(`[${this.ID}]`, ...args);
     }
 
     /**
      * Log helper.
      **/
     static debug(...args) {  
-        const shouldLog = game.modules.get('_dev-mode')?.api?.getPackageDebugValue(this.ID);
-
-        if (shouldLog) {
-            console.log(this.ID, '|', ...args);
-        }
+        console.debug(`[${this.ID}]`, ...args)
     }
 
     /**
      * Warning log helper.
      **/
     static warn(...args) {
-        console.warn(this.ID, '|', ...args);
+        console.warn(`[${this.ID}]`, ...args);
     }
 
     /**
      * Error log helper.
      **/
     static error(...args) {
-        console.error(this.ID, '|', ...args);
+        console.error(`[${this.ID}]`, ...args);
     }
 }

@@ -1,7 +1,7 @@
 # foundry-discord-bot
 A Foundry VTT module that hosts an extensible Discord bot in your Foundry server.
 
-![](https://img.shields.io/badge/Foundry-v10-informational)
+![](https://img.shields.io/badge/Foundry-v12-informational)
 <!--- Downloads @ Latest Badge -->
 - ![Latest Release Download Count](https://img.shields.io/github/downloads/tmcnulty14/foundry-discord-bot/latest/module.zip)
 

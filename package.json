@@ -4,7 +4,7 @@
   "main": "scripts/discord-bot.mjs",
   "scripts": {
     "build": "npm run build:code && npm run build:css",
-    "build:code": "rollup scripts/discord-bot.mjs -f es -o scripts/discord-bot-compiled.mjs -p node-resolve -m --sourcemapFile scripts/discord-bot.mjs",
+    "build:code": "rollup scripts/discord-bot.mjs -f es -o scripts/discord-bot-compiled.mjs -p node-resolve -p commonjs -p json -m --sourcemapFile scripts/discord-bot.mjs",
     "build:css": "lessc styles/discord-bot.css",
     "lint": "eslint --ignore-pattern .gitignore ./",
     "lint:fix": "eslint --ignore-pattern .gitignore --fix ./",
@@ -22,6 +22,8 @@
   "devDependencies": {
     "@babel/eslint-parser": "^7.24.7",
     "@foundryvtt/foundryvtt-cli": "github:foundryvtt/foundryvtt-cli",
+    "@rollup/plugin-commonjs": "^26.0.1",
+    "@rollup/plugin-json": "^6.1.0",
     "@rollup/plugin-node-resolve": "^15.2.3",
     "less": "^4.2.0",
     "rollup": "^4.18.1"

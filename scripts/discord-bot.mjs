@@ -1,5 +1,5 @@
-// Require the necessary discord.js classes
-const { Client, Events, GatewayIntentBits } = require('discord.js');
+// Import the necessary discord.js classes
+import { Client, Events, GatewayIntentBits } from 'discord.js';
 
 import * as log from './lib/logging.mjs';
 
